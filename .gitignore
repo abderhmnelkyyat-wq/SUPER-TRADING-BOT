@@ -1,0 +1,75 @@
+.env
+backend/.env
+backend/data/
+*.sqlite3
+*.db
+__pycache__/
+.pytest_cache/
+.venv/
+venv/
+mt5-agent/.env
+mt5-agent/.venv/
+mt5-agent/.bridge_token
+mt5-agent/sent_positions.json
+*.log
+
+# Secrets and credentials
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*_secret*
+*_credentials*
+
+# Databases and runtime data
+*.db
+*.sqlite
+*.sqlite3
+data/
+backend/data/
+mt5-agent/.bridge_token
+mt5-agent/sent_positions.json
+
+# Backups and temporary files
+backups/
+*.bak
+*.log
+__pycache__/
+.pytest_cache/
+.venv/
+venv/
+
+# Secrets and credentials
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*_secret*
+*_credentials*
+
+# Databases and runtime data
+*.db
+*.sqlite
+*.sqlite3
+data/
+backend/data/
+mt5-agent/.bridge_token
+mt5-agent/sent_positions.json
+
+# Backups and temporary files
+backups/
+*.bak
+*.log
+__pycache__/
+.pytest_cache/
+.venv/
+venv/
+
+# Local backup and editor-generated copies
+backup-before-logo/
+*.orig
+*.before-*

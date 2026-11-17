@@ -1,0 +1,67 @@
+services:
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-superbot}
+      POSTGRES_USER: ${POSTGRES_USER:-superbot}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in root .env}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-superbot} -d ${POSTGRES_DB:-superbot}"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    networks: [private]
+
+  app:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    restart: unless-stopped
+    env_file:
+      - backend/.env
+    environment:
+      APP_ENV: production
+      DATABASE_URL: postgresql+psycopg://${POSTGRES_USER:-superbot}:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB:-superbot}
+      PUBLIC_APP_URL: https://${PUBLIC_DOMAIN:?Set PUBLIC_DOMAIN in root .env}
+      CORS_ORIGINS: https://${PUBLIC_DOMAIN}
+      LIVE_TRADING_ENABLED: ${LIVE_TRADING_ENABLED:-false}
+      MT5_DEMO_ONLY: ${MT5_DEMO_ONLY:-true}
+    depends_on:
+      db:
+        condition: service_healthy
+    expose:
+      - "8000"
+    networks: [private]
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/api/health', timeout=3)"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+  proxy:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    environment:
+      PUBLIC_DOMAIN: ${PUBLIC_DOMAIN:?Set PUBLIC_DOMAIN in root .env}
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    volumes:
+      - ./deploy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on: [app]
+    networks: [private]
+
+volumes:
+  postgres_data:
+  caddy_data:
+  caddy_config:
+
+networks:
+  private:
+    driver: bridge

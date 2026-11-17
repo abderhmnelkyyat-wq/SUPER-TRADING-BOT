@@ -1,0 +1,16 @@
+.git
+.env
+backend/.env
+backend/.venv
+backend/__pycache__
+backend/.pytest_cache
+backend/data
+backend/tests
+mt5-agent/.env
+mt5-agent/.bridge_token
+mt5-agent/.venv
+mt5-agent/sent_positions.json
+**/__pycache__
+**/.pytest_cache
+backups
+*.zip

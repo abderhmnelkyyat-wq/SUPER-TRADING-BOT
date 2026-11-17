@@ -1,0 +1,307 @@
+/* SUPER TRADING BOT — Private Owner Console */
+:root {
+  --oc-bg:#060d18; --oc-panel:#0d1a2a; --oc-panel2:#10243a;
+  --oc-line:rgba(112,174,225,.17); --oc-blue:#39baff;
+  --oc-text:#edf5ff; --oc-muted:#93a9bf; --oc-radius:18px;
+}
+body {
+  min-height:100vh;
+  background:radial-gradient(ellipse at 12% 5%,rgba(20,120,194,.17),transparent 38%),
+             radial-gradient(ellipse at 92% 75%,rgba(42,83,160,.12),transparent 40%),
+             var(--oc-bg)!important;
+  color:var(--oc-text);
+  font-family:"Cairo","Tajawal","Noto Sans Arabic",Tahoma,Arial,sans-serif!important;
+  line-height:1.75;
+}
+button,input,select{font:inherit}
+.topbar{background:rgba(7,17,31,.91)!important;border-bottom:1px solid var(--oc-line);backdrop-filter:blur(18px);padding:13px 22px}
+.brand b{font-size:15px;letter-spacing:.4px}.brand small{color:var(--oc-blue);letter-spacing:1px}
+.shell{width:min(1500px,96%);margin:24px auto}
+.auth-grid{gap:24px;align-items:stretch}
+.auth-aside,.form-card,.sidebar,.surface-card,.metric-card,.stack-list>*,
+.news-health-card,.news-diagnostics{
+  background:linear-gradient(145deg,rgba(17,37,59,.97),rgba(8,21,36,.98))!important;
+  border:1px solid var(--oc-line)!important;border-radius:var(--oc-radius)!important;
+  box-shadow:0 14px 42px rgba(0,0,0,.2)
+}
+.auth-aside{padding:clamp(22px,4vw,46px)!important;display:flex;flex-direction:column;justify-content:center}
+.auth-aside h2,.page-heading h2{color:#fff;font-size:clamp(23px,3vw,32px);line-height:1.5;margin:10px 0}
+.auth-aside p,.page-heading p,.muted{color:var(--oc-muted)!important}
+.eyebrow{color:var(--oc-blue)!important;font-size:11px;font-weight:800;letter-spacing:1.2px}
+.feature-list{display:grid;gap:11px;margin-top:22px}
+.feature-list span{padding:11px 14px;background:rgba(57,186,255,.06);border:1px solid rgba(57,186,255,.13);border-radius:12px;color:#d9ecff}
+.form-card{padding:clamp(21px,4vw,36px)!important}
+.form-card h3,.surface-card h3{color:#f5f9ff;font-size:19px;margin-top:0}
+label{display:block;color:#d7e7f7;font-weight:700;margin:15px 0}
+input,select{width:100%;min-height:47px;margin-top:7px;padding:10px 13px;color:#f4f8ff!important;background:#071321!important;border:1px solid rgba(123,174,218,.24)!important;border-radius:12px!important;outline:none}
+input:focus,select:focus{border-color:var(--oc-blue)!important;box-shadow:0 0 0 3px rgba(57,186,255,.12)}
+.btn{min-height:43px;border-radius:12px!important;font-weight:800;transition:transform .18s ease,filter .18s ease}
+.btn-primary{background:linear-gradient(110deg,#1689e8,#39baff)!important;color:#04111e!important;border:0!important;box-shadow:0 7px 22px rgba(22,137,232,.2)}
+.btn-primary:hover,.btn-outline:hover,.nav-item:hover{transform:translateY(-2px);filter:brightness(1.08)}
+.btn-outline,.btn-ghost{border:1px solid rgba(57,186,255,.3)!important;color:#cceaff!important;background:rgba(57,186,255,.07)!important}
+.app-layout{display:grid;grid-template-columns:250px minmax(0,1fr);gap:20px;align-items:start}
+.sidebar{padding:17px!important;position:sticky;top:16px}
+.user-chip{padding:12px;background:rgba(57,186,255,.07);border:1px solid var(--oc-line);border-radius:14px;margin-bottom:16px}
+.user-chip b{color:#fff}.user-chip small{display:block;color:var(--oc-blue);font-size:10px}
+.sidebar nav{display:grid;gap:7px}
+.nav-item{text-align:right;padding:11px 13px;border:1px solid transparent;border-radius:11px;color:#b8cce0;background:transparent;cursor:pointer;transition:.18s}
+.nav-item.active{color:#fff;background:linear-gradient(100deg,rgba(22,137,232,.25),rgba(57,186,255,.08));border-color:rgba(57,186,255,.25);box-shadow:inset -3px 0 var(--oc-blue)}
+.sidebar-foot{margin-top:18px;padding:11px;border-top:1px solid var(--oc-line);color:var(--oc-muted);font-size:12px}.sidebar-foot b{color:#55d6a0}
+.workspace{min-width:0}.content-section{animation:ocFade .22s ease}
+@keyframes ocFade{from{opacity:.55;transform:translateY(4px)}to{opacity:1;transform:none}}
+.page-heading{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;margin-bottom:21px}
+.page-heading h2{margin-bottom:3px}.heading-tools{display:flex;align-items:center;gap:9px;flex-wrap:wrap}.heading-tools select{min-width:135px;margin:0}
+.metric-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px;margin-bottom:18px}
+.metric-card{padding:18px!important;position:relative;overflow:hidden}
+.metric-card:after{content:"";position:absolute;top:0;right:0;width:4px;height:100%;background:linear-gradient(#39baff,#1689e8)}
+.metric-card small{display:block;color:var(--oc-muted);font-size:12px;margin-bottom:7px}
+.metric-card strong{color:#fff;font-size:clamp(22px,3vw,31px);font-weight:900;font-variant-numeric:tabular-nums}
+.two-col{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.surface-card{padding:20px!important}.section-head{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.status-pill{border-radius:30px;padding:5px 12px;color:#ffb5b5;background:rgba(255,75,75,.1);border:1px solid rgba(255,75,75,.2);font-size:12px}
+.stack-list{display:grid;gap:11px}.stack-list>*{padding:16px!important;overflow-wrap:anywhere}
+.currency-list{color:#b8d9f5;overflow-wrap:anywhere}
+.notice{padding:13px;margin-top:15px;border-radius:12px;color:#c4d8eb;background:rgba(57,186,255,.07);border:1px solid var(--oc-line);font-size:12px}
+.message{padding:12px;margin-top:13px;border-radius:12px}.code-result{padding:14px;border-radius:12px;background:#06111d;overflow-wrap:anywhere;white-space:pre-wrap}
+.footer{color:#7189a2;border-top:1px solid var(--oc-line);padding-top:17px;margin-top:32px;font-size:12px}
+.news-health-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:11px;margin:17px 0}
+.news-health-card{padding:16px!important;min-width:0}
+.news-health-card small{display:block;color:var(--oc-muted);font-size:12px}
+.news-health-card strong{display:block;color:#fff;font-size:25px;font-weight:900;margin-top:5px}
+.news-diagnostics{padding:18px!important;margin:0 0 16px}
+.news-diagnostics-list{display:grid;gap:10px;margin-top:13px}
+.news-diagnostic-row{display:flex;justify-content:space-between;gap:14px;padding:13px;border:1px solid var(--oc-line);border-radius:13px;background:rgba(4,14,25,.45)}
+.news-diagnostic-main{min-width:0;display:grid;gap:4px}
+.news-diagnostic-main strong{color:#f4f8ff}
+.news-kind{display:inline-block;color:var(--oc-blue);font-size:10px;font-weight:800;letter-spacing:.7px}
+.news-diagnostic-main small{color:var(--oc-muted);font-size:11px}
+.news-latest-title{color:#d8eaff;font-size:12px;margin:3px 0 0;overflow-wrap:anywhere}
+.news-error{color:#ff9d9d;font-size:12px;margin:2px 0}
+.news-diagnostic-actions{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:7px;flex-shrink:0}
+.news-state{display:inline-flex;padding:4px 9px;border-radius:30px;font-size:10px;font-weight:800}
+.is-enabled{color:#7ce5b5;background:rgba(47,190,125,.12)}
+.is-disabled{color:#ffb0b0;background:rgba(220,70,70,.12)}
+.is-waiting{color:#f5d28b;background:rgba(218,159,52,.12)}
+.list-card{background:rgba(8,22,37,.7)!important;border:1px solid var(--oc-line)!important;border-radius:15px!important}
+.list-card h4{color:#eff7ff}.list-card p{color:var(--oc-muted);overflow-wrap:anywhere}
+.list-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+button:disabled{opacity:.55;cursor:wait;transform:none!important}
+@media(max-width:1000px){.app-layout{grid-template-columns:215px minmax(0,1fr);gap:13px}.metric-grid,.news-health-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:700px){
+ .shell{width:94%;margin:13px auto}.topbar{padding:10px 12px}.brand b{font-size:12px}.brand small{font-size:9px}
+ .auth-grid{grid-template-columns:1fr!important}.auth-aside{padding:19px!important}.auth-aside h2{font-size:23px}
+ .app-layout{display:flex;flex-direction:column;gap:13px}.sidebar{position:static;width:100%;padding:12px!important}
+ .user-chip{margin-bottom:9px}.sidebar nav{display:flex;overflow-x:auto;gap:6px;padding-bottom:5px;scrollbar-width:thin}
+ .nav-item{flex:0 0 auto;white-space:nowrap;font-size:12px;padding:9px 11px}
+ .nav-item.active{box-shadow:inset 0 -3px var(--oc-blue)}.sidebar-foot{display:none}
+ .workspace{width:100%}.page-heading{align-items:stretch}.page-heading h2{font-size:22px}
+ .page-heading>.btn,.heading-tools{width:100%}.heading-tools select,.heading-tools .btn{flex:1;min-width:0}
+ .metric-grid,.news-health-grid{gap:8px}.metric-card,.news-health-card{padding:13px!important}
+ .metric-card small,.news-health-card small{font-size:10px}.metric-card strong,.news-health-card strong{font-size:22px}
+ .two-col{grid-template-columns:1fr}.surface-card{padding:15px!important}
+ .news-diagnostic-row{flex-direction:column}.news-diagnostic-actions{flex-direction:row;flex-wrap:wrap;align-items:center}
+ .footer{flex-wrap:wrap;gap:8px}
+}
+@media(max-width:360px){.metric-grid{grid-template-columns:1fr}}
+
+
+
+/* Unified owner/customer design alignment — STB UI 2.2.0 */
+:root{
+  --oc-bg:#050c16;--oc-panel:#0b1727;--oc-panel2:#102239;
+  --oc-line:rgba(127,177,220,.16);--oc-blue:#43c4ff;
+  --oc-text:#f2f7ff;--oc-muted:#9aadc2;--oc-radius:18px
+}
+html{scroll-behavior:smooth}
+body{
+  background:
+    radial-gradient(ellipse at 8% 0%,rgba(31,116,180,.16),transparent 34%),
+    radial-gradient(ellipse at 100% 58%,rgba(39,89,164,.12),transparent 36%),
+    linear-gradient(180deg,#050c16 0%,#071321 55%,#050c16 100%)!important;
+  font-family:"Tajawal","Cairo","IBM Plex Sans Arabic",system-ui,sans-serif!important;
+  line-height:1.75
+}
+button,input,select,textarea{font:inherit}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{
+  outline:2px solid var(--oc-blue);outline-offset:3px
+}
+.topbar{
+  min-height:74px;height:auto;padding:12px clamp(14px,4vw,56px)!important;
+  background:rgba(5,12,22,.9)!important;border-bottom:1px solid var(--oc-line);
+  box-shadow:0 8px 30px rgba(0,0,0,.12)
+}
+.brand-mark{
+  width:46px;height:46px;border-radius:14px;overflow:hidden;
+  background:linear-gradient(145deg,#143b58,#0b2034);
+  border:1px solid rgba(67,196,255,.25)
+}
+.brand-mark img{width:100%;height:100%;object-fit:contain}
+.shell{width:min(1480px,94%);margin:0 auto;padding:clamp(20px,3vw,36px) 0 28px}
+.auth-grid{max-width:1120px;grid-template-columns:minmax(250px,.82fr) minmax(0,1.18fr);gap:clamp(18px,4vw,54px);margin:22px auto 58px}
+.auth-aside,.form-card,.sidebar,.surface-card,.metric-card,.stack-list>*,
+.news-health-card,.news-diagnostics{
+  background:linear-gradient(145deg,rgba(13,31,49,.97),rgba(8,20,34,.98))!important;
+  border:1px solid var(--oc-line)!important;border-radius:var(--oc-radius)!important;
+  box-shadow:0 16px 42px rgba(0,0,0,.2)
+}
+.auth-aside{padding:clamp(22px,3vw,38px)!important}
+.auth-aside h2,.page-heading h2{font-size:clamp(23px,2.7vw,32px);line-height:1.45;color:#f4f8ff}
+.auth-aside p,.page-heading p,.muted{color:var(--oc-muted)!important;line-height:1.9}
+.eyebrow{color:#70d1ff!important;font-size:10px;font-weight:800;letter-spacing:1.4px}
+.feature-list{gap:10px}
+.feature-list span{padding:10px 12px;border:1px solid rgba(127,177,220,.11);border-radius:11px;background:rgba(8,24,40,.55)}
+.form-card{padding:clamp(17px,2.4vw,26px)!important}
+.form-card h3,.surface-card h3{font-size:19px;color:#f3f8ff}
+label{color:#d5e3f0;font-weight:700;line-height:1.7}
+input,select,textarea{
+  min-height:46px;padding:11px 13px;color:#f1f7ff!important;
+  background:#061321!important;border:1px solid rgba(127,177,220,.22)!important;
+  border-radius:11px!important
+}
+input::placeholder,textarea::placeholder{color:#6f849a}
+input:focus,select:focus,textarea:focus{border-color:var(--oc-blue)!important;box-shadow:0 0 0 3px rgba(67,196,255,.12)}
+.btn{min-height:44px;padding:11px 18px;border-radius:12px!important;font-weight:800}
+.btn-primary{background:linear-gradient(110deg,#168be4,#45c2ff)!important;color:#031321!important;box-shadow:0 8px 24px rgba(37,141,232,.22)}
+.btn-outline,.btn-ghost{background:rgba(18,43,66,.72)!important;border:1px solid rgba(90,177,231,.32)!important;color:#d9efff!important}
+.app-layout{grid-template-columns:248px minmax(0,1fr);gap:20px;align-items:start;margin:8px 0 40px}
+.sidebar{position:sticky;top:92px;padding:16px!important}
+.user-chip{padding:8px 10px 14px!important;gap:12px;margin-bottom:12px}
+.user-chip b{color:#f4f8ff;font-size:13px}
+.user-chip small{color:#78d2ff;font-size:10px}
+.sidebar nav{gap:7px;margin:12px 0}
+.nav-item{padding:12px 13px;border:1px solid transparent;border-radius:11px;color:#a9bfd2;font-weight:700;transition:background .18s,border-color .18s,color .18s}
+.nav-item.active{
+  color:#effaff;background:linear-gradient(100deg,rgba(28,139,220,.24),rgba(67,196,255,.07));
+  border-color:rgba(67,196,255,.22);box-shadow:inset -3px 0 #43c4ff
+}
+.sidebar-foot{border-color:var(--oc-line);padding-top:13px}
+.page-heading{padding-bottom:15px;border-bottom:1px solid rgba(127,177,220,.1);margin-bottom:18px}
+.page-heading h2{margin:5px 0 2px}
+.page-heading p{font-size:12px;margin:0}
+.metric-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:15px}
+.metric-card{padding:18px!important;position:relative;overflow:hidden}
+.metric-card:before{content:"";position:absolute;inset:0 0 auto;height:2px;background:linear-gradient(90deg,transparent,#43c4ff,transparent);opacity:.7}
+.metric-card:after{display:none}
+.metric-card small{color:#9db2c7;font-size:11px}
+.metric-card strong{display:block;margin-top:8px;color:#f5f9ff;font-size:clamp(21px,2.4vw,29px);overflow-wrap:anywhere}
+.two-col{gap:13px}
+.surface-card{padding:19px!important;margin-bottom:13px}
+.section-head{flex-wrap:wrap}
+.status-pill,.mode-pill{
+  display:inline-flex;align-items:center;justify-content:center;min-height:28px;
+  border-radius:999px;padding:5px 11px;border:1px solid rgba(67,196,255,.2);
+  background:rgba(67,196,255,.08);color:#8bdcff;font-size:11px;font-weight:800
+}
+.notice{padding:13px 15px;border:1px solid rgba(67,196,255,.17);border-radius:12px;background:rgba(29,105,150,.1);color:#c1d9ec;font-size:12px;line-height:1.9}
+.stack-list{gap:11px}
+.stack-list>*{padding:16px!important}
+.list-card{background:linear-gradient(145deg,rgba(14,34,53,.95),rgba(7,20,33,.96))!important}
+.list-card h4{color:#f0f7ff}
+.list-card p{color:#9aadc2;line-height:1.8}
+.list-actions{gap:8px}
+.table-wrap{width:100%;overflow:auto;border:1px solid var(--oc-line);border-radius:14px;background:rgba(8,20,34,.72)}
+table{width:100%;border-collapse:separate;border-spacing:0;min-width:650px;font-size:12px}
+thead th{background:#10243a;color:#bfe8ff;text-align:right;padding:14px 13px;border-bottom:1px solid var(--oc-line);white-space:nowrap}
+tbody td{padding:13px;border-bottom:1px solid rgba(127,177,220,.09);color:#d6e2ef;white-space:nowrap}
+tbody tr:last-child td{border-bottom:0}
+tbody tr:hover td{background:rgba(67,196,255,.035)}
+.news-health-grid{gap:10px}
+.news-health-card{padding:16px!important}
+.news-health-card small{color:var(--oc-muted)}
+.news-health-card strong{color:#f5f9ff}
+.news-diagnostics{padding:18px!important}
+.news-diagnostic-row{border-color:var(--oc-line);background:rgba(4,14,25,.45);border-radius:13px}
+.news-diagnostic-main strong{color:#f4f8ff}
+.news-diagnostic-main small{color:var(--oc-muted)}
+.code-result{border:1px solid rgba(67,196,255,.18);border-radius:12px;background:#040d17;color:#aee3ff;line-height:1.8}
+.footer{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;border-color:var(--oc-line);color:#748ba2;font-size:11px}
+.toast{border:1px solid rgba(67,196,255,.25);border-radius:13px;background:#10283e;color:#e8f6ff;box-shadow:0 18px 48px rgba(0,0,0,.26)}
+.hidden{display:none!important}
+@media(max-width:1050px){.app-layout{grid-template-columns:215px minmax(0,1fr);gap:14px}.metric-grid,.news-health-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){
+ .topbar{min-height:66px;padding:10px 14px!important}
+ .shell{width:94%;padding:18px 0 24px}
+ .auth-grid{grid-template-columns:1fr;gap:13px;margin:12px auto 34px}
+ .auth-aside{padding:20px!important}
+ .auth-aside h2{font-size:27px;margin:10px 0}
+ .feature-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:16px}
+ .feature-list span{font-size:11px;padding:9px}
+ .form-card{padding:16px!important}
+ .app-layout{display:flex;flex-direction:column;gap:12px;margin:5px 0 28px}
+ .sidebar{position:static;width:100%;padding:12px!important}
+ .user-chip{padding:4px 2px 11px!important;margin-bottom:8px}
+ .sidebar nav{display:flex;overflow-x:auto;gap:6px;margin:8px 0 0;padding-bottom:5px;scrollbar-width:thin}
+ .nav-item{flex:0 0 auto;white-space:nowrap;padding:9px 12px;font-size:11px}
+ .nav-item.active{box-shadow:inset 0 -3px #43c4ff}
+ .sidebar-foot{display:none}
+ .workspace{width:100%}
+ .page-heading{align-items:flex-start;margin-bottom:14px;padding-bottom:12px}
+ .page-heading h2{font-size:22px}
+ .metric-grid,.news-health-grid{gap:8px}
+ .metric-card,.news-health-card{padding:13px!important}
+ .metric-card strong,.news-health-card strong{font-size:22px}
+ .two-col{grid-template-columns:1fr}
+ .surface-card{padding:15px!important}
+ .news-diagnostic-row{flex-direction:column}
+ .news-diagnostic-actions{flex-direction:row;flex-wrap:wrap;align-items:center}
+ .footer{font-size:10px}
+}
+@media(max-width:380px){.metric-grid{grid-template-columns:1fr 1fr}.feature-list{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+/* Admin PWA install action */
+.btn-install {
+  border:1px solid rgba(57,186,255,.55);
+  color:#eaf8ff;
+  background:linear-gradient(135deg,rgba(18,117,177,.34),rgba(57,186,255,.12));
+  white-space:nowrap;
+}
+.btn-install:hover {
+  border-color:var(--oc-blue);
+  filter:brightness(1.12);
+}
+.install-help {
+  width:min(92vw,460px);
+  padding:0;
+  border:1px solid var(--oc-line);
+  border-radius:20px;
+  color:var(--oc-text);
+  background:var(--oc-panel);
+}
+.install-help::backdrop {
+  background:rgba(0,0,0,.72);
+  backdrop-filter:blur(4px);
+}
+.install-help-card {
+  position:relative;
+  padding:26px;
+  line-height:1.9;
+}
+.install-help-card h3 {
+  margin:0 0 12px;
+  color:var(--oc-blue);
+}
+.install-help-card ul {
+  padding-inline-start:22px;
+}
+.install-help-close {
+  position:absolute;
+  inset-inline-end:14px;
+  top:10px;
+  border:0;
+  background:transparent;
+  color:var(--oc-text);
+  font-size:26px;
+  cursor:pointer;
+}
+@media(max-width:620px) {
+  .top-actions {
+    gap:8px;
+    flex-wrap:wrap;
+    justify-content:flex-end;
+  }
+  .btn-install {
+    font-size:12px;
+    padding:9px 11px;
+  }
+}

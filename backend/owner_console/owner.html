@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#07111f"><meta name="robots" content="noindex,nofollow,noarchive">
+  <title>SUPER TRADING BOT | Private Console</title>
+  <link rel="stylesheet" href="/static/styles.css">
+  <link rel="stylesheet" href="/owner-console/assets/owner.css">
+  <link rel="manifest" href="/owner-console/manifest.webmanifest">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="STB Admin">
+  <link rel="apple-touch-icon" href="/static/icons/apple-touch-icon.png">
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <a class="brand" href="/"><span class="brand-mark"><img src="/static/images/logo.png" alt="SUPER TRADING BOT"></span><span><b>SUPER TRADING BOT</b><small>PRIVATE CONTROL CONSOLE</small></span></a>
+    <div class="top-actions"><span class="connection"><i></i> بوابة خاصة</span><button id="installOwnerAppBtn" class="btn btn-install" type="button" aria-label="تثبيت تطبيق الأدمن">⇩ تثبيت تطبيق الأدمن</button><button id="ownerLogoutBtn" class="btn btn-ghost hidden">تسجيل الخروج</button></div>
+  </header>
+  <main class="shell">
+    <section id="ownerAuth" class="auth-grid">
+      <aside class="auth-aside"><span class="eyebrow">PRIVATE OWNER ACCESS</span><h2>بوابة المالك</h2><p>هذه الصفحة غير مرتبطة بواجهة العملاء. كل عمليات الإدارة تتحقق من الصلاحيات على الخادم.</p><div class="feature-list"><span>◈ مصادقة مالك مستقلة</span><span>◈ إدارة حسابات العملاء والتراخيص</span><span>◈ إدارة مصادر الأخبار والبوتات</span><span>◈ سجل تدقيق وأحداث أمان</span></div></aside>
+      <div class="form-card">
+        <form id="ownerLoginForm">
+          <h3>تسجيل دخول المالك</h3><p class="muted">لا يوجد تسجيل مالك عام. الحساب يُنشأ من أداة الإعداد الآمن على الخادم.</p>
+          <label>البريد الإلكتروني<input name="email" type="email" required autocomplete="username"></label>
+          <label>كلمة المرور<input name="password" type="password" required minlength="12" autocomplete="current-password"></label>
+          <button class="btn btn-primary full" type="submit">دخول لوحة المالك</button>
+        </form>
+        <div id="ownerAuthMessage" class="message hidden" role="status"></div>
+      </div>
+    </section>
+    <section id="ownerApp" class="app-layout hidden">
+      <aside class="sidebar"><div class="user-chip"><span class="avatar owner-avatar"><img src="/static/images/logo.png" alt="ST"></span><span><b>مالك التطبيق</b><small>SUPER ADMIN</small></span></div><nav><button class="nav-item active" data-section="ownerHome">لوحة المؤشرات</button><button class="nav-item" data-section="requestsSection">أرشيف طلبات الدفع</button><button class="nav-item" data-section="licensesSection">التراخيص</button><button class="nav-item" data-section="referralsAdminSection">الإحالات</button><button class="nav-item" data-section="feesSection">عمولات الأداء</button><button class="nav-item" data-section="securitySection">الأمان والسجل</button><button class="nav-item" data-section="integrationsSection">مصادر الأخبار والبوتات</button></nav><div class="sidebar-foot">صلاحية المالك <b>كاملة</b></div></aside>
+      <div class="workspace">
+        <section id="ownerHome" class="content-section"><div class="page-heading"><div><span class="eyebrow">OWNER CONTROL CENTER</span><h2>لوحة إدارة المالك</h2><p>إدارة العملاء والتراخيص ومصادر الأخبار وعمولات الأداء.</p></div><button class="btn btn-outline" id="exportRevenue">تصدير الإيرادات CSV</button></div><div class="metric-grid"><article class="metric-card"><small>إجمالي العملاء</small><strong id="ownerUsers">0</strong></article><article class="metric-card"><small>العملاء النشطون</small><strong id="ownerActive">0</strong></article><article class="metric-card"><small>طلبات دفع تاريخية</small><strong id="ownerPending">0</strong></article><article class="metric-card"><small>إجمالي مدفوعات الأرشيف التاريخي</small><strong id="ownerSubsRevenue">$0</strong></article></div><div class="two-col"><article class="surface-card"><h3>عمولات أداء مستحقة</h3><div id="ownerFeesDue" class="currency-list">—</div></article><article class="surface-card"><h3>عمولات أداء تم تحصيلها</h3><div id="ownerFeesPaid" class="currency-list">—</div></article></div><article class="surface-card" style="margin-top:16px"><div class="section-head"><h3>حالة التداول الحقيقي REAL</h3><span id="ownerLiveTradingState" class="status-pill">مغلق</span></div><p>حسابات العملاء التي سجلت موافقة منفصلة على التداول الحقيقي: <b id="ownerLiveConsentCount">0</b></p><p class="muted">فتح بوابة الخادم يتم من إعدادات النشر فقط بعد اختبار DEMO ومراجعة المتطلبات القانونية والأمنية. هذه اللوحة تعرض الحالة ولا تفتح التداول وحدها.</p></article></section>
+        <section id="requestsSection" class="content-section hidden"><div class="page-heading"><div><span class="eyebrow">LEGACY PAYMENT ARCHIVE</span><h2>أرشيف طلبات الدفع القديمة</h2><p>سجلات تاريخية من إصدار سابق. التسجيل الحالي مجاني بالكامل ولا توجد رسوم تفعيل أو اعتماد مدفوعات جديدة.</p></div><div class="heading-tools"><select id="requestFilter"><option value="pending">قيد المراجعة</option><option value="approved">معتمدة</option><option value="rejected">مرفوضة</option><option value="all">الكل</option></select><button class="btn btn-outline" data-refresh="requests">تحديث</button></div></div><div id="requestsList" class="stack-list"></div></section>
+        <section id="licensesSection" class="content-section hidden"><div class="page-heading"><div><span class="eyebrow">LICENSE MANAGEMENT</span><h2>إدارة التراخيص</h2><p>تعليق أو فك تعليق أو إعادة ربط جهاز العميل.</p></div><button class="btn btn-outline" data-refresh="licenses">تحديث</button></div><div id="licensesList" class="stack-list"></div></section>
+        <section id="referralsAdminSection" class="content-section hidden"><div class="page-heading"><div><span class="eyebrow">REFERRAL TRACKING</span><h2>متابعة الإحالات</h2><p>الإحالات للدعوة فقط — دون مكافآت أو عمولات.</p></div><button class="btn btn-outline" data-refresh="referrals">تحديث</button></div><div id="referralsList" class="stack-list"></div></section><section id="feesSection" class="content-section hidden"><div class="page-heading"><div><span class="eyebrow">PERFORMANCE REVENUE</span><h2>عمولات الأداء</h2><p>30% من صافي الأرباح المؤهلة.</p></div><div class="heading-tools"><select id="feeFilter"><option value="due">مستحقة</option><option value="paid">تم تحصيلها</option><option value="all">الكل</option></select><button class="btn btn-outline" data-refresh="fees">تحديث</button></div></div><div id="feesList" class="stack-list"></div></section>
+        <section id="securitySection" class="content-section hidden"><div class="page-heading"><div><span class="eyebrow">SECURITY AUDIT</span><h2>الأمان وسجل العمليات</h2><p>محاولات مشاركة الترخيص وأحداث الأمان.</p></div><button class="btn btn-outline" data-refresh="security">تحديث</button></div><div id="securityList" class="stack-list"></div></section>
+    
+        <section id="integrationsSection" class="content-section hidden">
+          <div class="page-heading"><div><span class="eyebrow">EXTERNAL INTELLIGENCE</span><h2>مصادر الأخبار والبوتات</h2><p>أضف موجز RSS أو اربط Webhook لبوت خارجي أو Telegram Bot للقنوات العامة.</p></div><button class="btn btn-outline" data-refresh="integrations">تحديث المصادر</button></div>
+          <div class="surface-card narrow">
+            <form id="integrationSourceForm">
+              <label>اسم المصدر<input name="name" minlength="2" maxlength="120" required placeholder="اسم واضح للمصدر"></label>
+              <label>نوع المصدر<select name="kind" id="integrationKind"><option value="rss">RSS / Atom عبر HTTPS</option><option value="webhook">Webhook لبوت خارجي</option><option value="telegram">Telegram Bot — قناة عامة فقط</option></select></label>
+              <label id="integrationUrlWrap">رابط موجز RSS<input name="url" id="integrationUrl" type="url" placeholder="https://example.com/feed.xml"></label>
+              <button class="btn btn-primary full" type="submit">إضافة مصدر</button>
+            </form>
+            <div id="integrationSourceResult" class="code-result hidden"></div>
+            <div class="notice">الرمز السري يظهر مرة واحدة عند إنشاء Webhook أو Telegram. احفظه في إعدادات التكامل ولا تشاركه. بعد إنشاء مصدر Telegram اضبط Webhook في Bot API باستخدام الرابط والسر المعروضين. لا يُعد المصدر متصلًا حتى يصل تحديث حقيقي. المحتوى الخارجي غير متحقق منه ولا ينفذ صفقات.</div>
+          </div>
+          <div class="news-health-grid" aria-live="polite">
+            <article class="news-health-card"><small>مصادر الأخبار</small><strong id="newsSourcesTotal">0</strong></article>
+            <article class="news-health-card"><small>مصادر مفعّلة</small><strong id="newsSourcesEnabled">0</strong></article>
+            <article class="news-health-card"><small>أخبار مستلمة</small><strong id="newsItemsTotal">0</strong></article>
+            <article class="news-health-card"><small>الفحص التلقائي</small><strong id="newsPollingState">—</strong><small id="newsPollingInterval"></small></article>
+          </div>
+          <article class="surface-card news-diagnostics">
+            <div class="section-head"><div><h3>مراقبة الاستجابة والاستقبال</h3><p class="muted">اختبار الاتصال ومسار إدخال الخبر، مع فصل نجاح المعالجة المحلية عن تأكيد وصول بيانات خارجية حقيقية.</p></div><button class="btn btn-outline" data-refresh="integrations">تحديث</button></div>
+            <div id="newsDiagnosticsList" class="news-diagnostics-list"><p class="muted">جاري تحميل حالة المصادر...</p></div>
+          </article>
+          <div id="integrationSourcesList" class="stack-list" style="margin-top:16px"></div>
+        </section>
+      </div>
+</section>
+    <footer class="footer"><span>SUPER TRADING BOT</span><span>لوحة تحكم خاصة — الوصول محمي</span><span>© 2026</span></footer>
+  </main>
+  <div id="toast" class="toast" role="status"></div>
+  <dialog id="ownerInstallHelp" class="install-help" aria-labelledby="ownerInstallHelpTitle"><div class="install-help-card">
+    <button type="button" class="install-help-close" id="closeOwnerInstallHelp" aria-label="إغلاق">×</button>
+    <h3 id="ownerInstallHelpTitle">تثبيت تطبيق الأدمن</h3><p>إذا لم تظهر نافذة التثبيت تلقائيًا، استخدم قائمة المتصفح:</p>
+    <ul><li><b>Android:</b> افتح قائمة ⋮ ثم اختر «تثبيت التطبيق» أو «إضافة إلى الشاشة الرئيسية».</li>
+    <li><b>Windows / Chrome أو Edge:</b> افتح قائمة المتصفح ثم «تثبيت الصفحة كتطبيق» أو «Install app».</li></ul>
+    <p class="muted">يتطلب التثبيت اتصال HTTPS أو بيئة محلية موثوقة. قد تختلف أسماء الخيارات حسب المتصفح.</p>
+    <button type="button" class="btn btn-primary full" id="closeOwnerInstallHelpBtn">حسنًا</button>
+  </div></dialog>
+  <script src="/owner-console/app.js" defer></script>
+</body>
+</html>

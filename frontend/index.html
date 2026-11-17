@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#060b14"><meta name="description" content="بوت التداول الفائق - منصة تحليل وإدارة تداول ذكية متعددة المنصات">
+  <title>بوت التداول الفائق | SUPER TRADING BOT</title>
+  <link rel="manifest" href="/manifest.webmanifest"><link rel="icon" href="/static/images/logo.png" type="image/png"><link rel="apple-touch-icon" href="/static/icons/apple-touch-icon.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <a class="brand" href="/"><img class="brand-logo" src="/static/images/logo.png" alt="SUPER TRADING BOT"><span><b>بوت التداول الفائق</b><small>SUPER TRADING BOT</small></span></a>
+    <div class="top-actions"><span id="connection" class="connection"><i></i> النظام متصل</span><button id="logoutBtn" class="btn btn-ghost hidden">تسجيل الخروج</button></div>
+  </header>
+  <main class="shell">
+    <section id="landing" class="landing">
+      <div class="hero-copy">
+        <img class="hero-logo" src="/static/images/logo.png" alt="SUPER TRADING BOT">
+        <div class="eyebrow"><span class="pulse"></span> منصة تحليل تداول متعددة الاستراتيجيات</div>
+        <h1>قرار تداول أذكى.<br><em>إدارة أكثر انضباطًا.</em></h1>
+        <p>تحليل متعدد المحركات، إدارة حساب MT5، متابعة الصفقات والعمولات، وحساب مجاني، تحليل الأسواق، متابعة MT5، وعمولة أداء واضحة عند تحقق صافي ربح مؤهل..</p>
+        <div class="hero-points"><span>✓ تحليل فني متعدد</span><span>✓ إدارة مخاطر</span><span>✓ سجل شفاف</span></div>
+        <div class="hero-actions"><button class="btn btn-primary" data-view="login">تسجيل الدخول</button><button class="btn btn-outline" data-view="register">إنشاء حساب</button><button class="btn btn-install" id="installAppBtn" type="button"><span>⬇</span> تنزيل التطبيق</button></div><p id="installHelp" class="install-help hidden" role="status"></p>
+        <p class="risk-note">تداول بثقة مع SUPER TRADING BOT</p>
+      </div>
+      <div class="hero-panel">
+        <div class="panel-head"><span>MARKET INTELLIGENCE</span><span class="live-indicator">● PAPER / DEMO</span></div>
+        <div class="chart-wrap"><div class="chart-grid"></div><svg viewBox="0 0 600 250" role="img" aria-label="رسم توضيحي لحركة السوق"><defs><linearGradient id="area" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#27d5ce" stop-opacity=".35"/><stop offset="1" stop-color="#27d5ce" stop-opacity="0"/></linearGradient></defs><path d="M0 190 C40 180 45 130 85 150 S130 170 160 120 S210 142 242 95 S280 135 315 110 S355 65 395 88 S435 55 465 85 S510 30 540 58 S575 25 600 30 L600 250 L0 250Z" fill="url(#area)"/><path d="M0 190 C40 180 45 130 85 150 S130 170 160 120 S210 142 242 95 S280 135 315 110 S355 65 395 88 S435 55 465 85 S510 30 540 58 S575 25 600 30" fill="none" stroke="#2dd4bf" stroke-width="4" stroke-linecap="round"/></svg></div>
+        <div class="signal-row"><div><small>محركات التحليل</small><b>متعددة</b></div><div><small>إدارة المخاطر</small><b>مفعّلة</b></div><div><small>وضع التداول</small><b class="cyan">محاكاة / تجريبي</b></div></div>
+        <div class="panel-foot"><span>SMART ANALYSIS ENGINE</span><span>MT5 CONNECTOR READY</span></div>
+      </div>
+    </section>
+
+    <section id="authViews" class="auth-grid hidden">
+      <aside class="auth-aside"><span class="eyebrow">SUPER TRADING BOT</span><h2 id="authTitle">ابدأ رحلتك</h2><p id="authDescription">إدارة أكثر وضوحًا لحساب التداول الخاص بك.</p><div class="feature-list"><span>◈ تسجيل مجاني دون رسوم تفعيل</span><span>◈ لوحة تحكم خاصة بك</span><span>◈ ربط مباشر عبر MT5 Agent</span><span>◈ تقارير ربح ورسوم واضحة</span></div></aside>
+      <div class="form-card">
+        <div class="tabbar"><button class="tab active" data-view="register">إنشاء حساب جديد</button><button class="tab" data-view="login">تسجيل الدخول</button></div>
+        <form id="registerForm" class="form-view">
+          <h3>إنشاء حساب جديد</h3><p class="muted">لا توجد رسوم اشتراك أو تفعيل. تنطبق عمولة أداء 30% على صافي الأرباح المؤهلة فقط وفق شروط الخدمة.</p>
+          <label>الاسم الكامل<input name="full_name" required minlength="2" maxlength="120" placeholder="الاسم الكامل"></label>
+          <label>البريد الإلكتروني<input name="email" type="email" required placeholder="name@example.com"></label>
+          <label>رقم الهاتف <span class="optional">اختياري</span><input name="phone" maxlength="40" placeholder="+20..."></label>
+          <label>كلمة المرور<input name="password" type="password" required minlength="12" autocomplete="new-password" placeholder="12 حرفًا على الأقل"></label>
+          <label>تأكيد كلمة المرور<input name="password_confirm" type="password" required minlength="12" autocomplete="new-password"></label>
+          <input name="referral_code" id="referralCode" type="hidden"><button class="btn btn-primary full" type="submit">إنشاء حساب جديد</button>
+        </form>
+        <form id="loginForm" class="form-view hidden">
+          <h3>تسجيل دخول العميل</h3><p class="muted">الدخول متاح من التثبيت الذي تم تفعيله.</p>
+          <label>البريد الإلكتروني<input name="email" type="email" required></label><label>كلمة المرور<input name="password" type="password" required minlength="12"></label>
+          <button class="btn btn-primary full" type="submit">تسجيل الدخول</button>
+        </form>
+        
+        <div id="authMessage" class="message hidden" role="status"></div>
+      </div>
+    </section>
+
+    <section id="customerApp" class="app-layout hidden">
+      <aside class="sidebar"><div class="user-chip"><span class="avatar" id="userInitial">ع</span><span><b id="userName">العميل</b><small id="userEmail"></small></span></div><nav><button class="nav-item active" data-section="customerHome">نظرة عامة</button><button class="nav-item" data-section="mt5Section">ربط MT5</button><button class="nav-item" data-section="signalsSection">إشارات التحليل</button><button class="nav-item" data-section="intelligenceSection">الأخبار والبوتات</button><button class="nav-item" data-section="tradesSection">الصفقات</button><button class="nav-item" data-section="referralSection">رابط الإحالة</button></nav><div class="sidebar-foot">حساب محمي <b id="licenseStatus">—</b></div></aside>
+      <div class="workspace">
+        <section id="customerHome" class="content-section"><div class="page-heading"><div><span class="eyebrow">CUSTOMER WORKSPACE</span><h2>لوحة التداول</h2><p>ملخص حسابك واتصال منصة التداول.</p></div><span class="mode-pill">DEMO / LIVE GATED</span></div><div class="metric-grid"><article class="metric-card"><small>عدد الصفقات المغلقة</small><strong id="tradeCount">0</strong></article><article class="metric-card"><small>الصفقات الرابحة</small><strong id="winningTrades">0</strong></article><article class="metric-card"><small>صافي نتيجة الصفقات</small><strong id="netProfit">0.00</strong></article><article class="metric-card"><small>عمولات الأداء المستحقة</small><strong id="feesDue">0.00</strong></article></div><div class="two-col"><article class="surface-card"><div class="section-head"><h3>حالة حساب MT5</h3><span id="mt5State" class="status-pill">غير متصل</span></div><p class="muted">اربط حساب التداول من خلال MT5 Agent على جهاز Windows متصل بمنصة MT5.</p><button class="btn btn-outline" data-section-link="mt5Section">إعداد الاتصال</button></article><article class="surface-card"><div class="section-head"><h3>نظام الرسوم</h3><span class="fee-rate">30%</span></div><p>تُحتسب عمولة الأداء 30% من صافي الأرباح المؤهلة المحققة، بعد احتساب الربح والسواب والعمولة.</p><p class="muted">لا تُفرض رسوم أداء على الصفقة الخاسرة.</p></article></div><article class="surface-card settings-card"><div class="section-head"><h3>إعدادات الإدارة التلقائية</h3><span class="mode-pill">موافقة صريحة</span></div><form id="tradingSettingsForm"><label class="check-row"><input id="autoTradingEnabled" type="checkbox"> أسمح لمحرك التداول بإدارة الصفقات تلقائيًا (DEMO / Paper)</label><label class="check-row"><input id="riskDisclosure" type="checkbox"> قرأت وأوافق على أن التداول قد يسبب خسارة رأس المال ولا توجد أرباح مضمونة</label><div class="live-consent-panel"><h4>التداول الحقيقي بأموال فعلية</h4><label class="check-row"><input id="liveTradingEnabled" type="checkbox"> أطلب تفعيل التداول الحقيقي على حساب MT5 الحقيقي الخاص بي عند فتح بوابات الإطلاق</label><label class="check-row"><input id="liveRiskDisclosure" type="checkbox"> أفهم أنني قد أخسر جزءًا من رأس المال أو كله، وأن التنفيذ والانزلاق والعمولات تعتمد على الوسيط وظروف السوق، ولا توجد أرباح مضمونة</label></div><button class="btn btn-primary" type="submit">حفظ إعدادات التداول</button></form><p id="tradingPolicyNote" class="muted">التداول الحقيقي مدعوم برمجيًا لكنه مغلق افتراضيًا. يلزم تفعيل الخادم وتأكيد Windows MT5 وموافقتك المستقلة.</p></article></section>
+        <section id="mt5Section" class="content-section hidden"><div class="page-heading"><div><span class="eyebrow">META TRADER 5</span><h2>ربط حساب التداول</h2><p>لا تدخل كلمة مرور MT5 هنا. سجّل الدخول داخل منصة MT5 على Windows أولًا.</p></div></div><div class="surface-card narrow"><form id="mt5Form"><label>رقم حساب MT5<input name="account_login" required placeholder="12345678"></label><label>اسم خادم الوسيط<input name="server_name" required placeholder="Broker-Server"></label><button class="btn btn-primary full">إنشاء رمز ربط مؤقت</button></form><div id="mt5LinkResult" class="code-result hidden"></div><div class="notice">رمز الربط صالح لمدة 15 دقيقة ويُستخدم مرة واحدة. احتفظ برمز جسر MT5 على جهاز Windows ولا تشاركه.</div></div></section>
+        <section id="signalsSection" class="content-section hidden"><div class="page-heading"><div><span class="eyebrow">MULTI-AGENT ANALYSIS</span><h2>إشارات التحليل</h2><p>الإشارات الناتجة من توافق محركات الاتجاه والزخم وMACD.</p></div></div><div class="table-wrap"><table><thead><tr><th>السوق</th><th>الإطار</th><th>الاتجاه</th><th>الثقة</th><th>الدخول</th><th>وقف الخسارة</th><th>الهدف</th><th>وقت التحليل</th></tr></thead><tbody id="signalsBody"><tr><td colspan="8" class="empty">لا توجد إشارات حتى الآن.</td></tr></tbody></table></div></section><section id="intelligenceSection" class="content-section hidden"><div class="page-heading"><div><span class="eyebrow">EXTERNAL MARKET INTELLIGENCE</span><h2>الأخبار ومعلومات السوق</h2><p>محتوى من مصادر الأخبار والبوتات التي ربطها مالك النظام.</p></div><button class="btn btn-outline" id="refreshIntelligence">تحديث</button></div><div class="notice">المحتوى الخارجي غير موثّق تلقائيًا، وقد يحتوي على معلومات خاطئة أو متضاربة. يُستخدم للتحليل والمراجعة فقط، ولا يستطيع إصدار أوامر تداول أو تجاوز مدير المخاطر.</div><div id="intelligenceList" class="stack-list"><div class="surface-card muted">لا توجد معلومات واردة بعد.</div></div><article class="surface-card assistant-chat" style="margin-top:18px"><div class="section-head"><div><h3>مساعد التداول الذكي</h3><p class="muted">اسأل عن حسابك أو الصفقات أو الأخبار المتاحة.</p></div><span class="mode-pill">AI ASSISTANT</span></div><p id="assistantStatusText" class="muted" role="status">جارٍ التحقق من إعداد المساعد…</p><div id="assistantMessages" class="assistant-messages" aria-live="polite"><div class="assistant-message assistant">مرحبًا! يمكنني شرح بيانات حسابك ومساعدتك في فهم الأخبار والصفقات، عندما يتم إعداد مزود الذكاء الاصطناعي.</div></div><label class="check-row assistant-consent"><input id="assistantConsent" type="checkbox" disabled> أوافق على إرسال سؤالي وسياق المحادثة وملخص بيانات حسابي وآخر الأخبار إلى مزود الذكاء الاصطناعي الخارجي الذي تم ضبطه على الخادم بغرض الإجابة. لا تُرسل كلمات مرور MT5 أو مفاتيح API.</label><form id="assistantChatForm" class="assistant-chat-form"><textarea id="assistantQuestion" rows="2" maxlength="2000" placeholder="اكتب سؤالك…" required disabled></textarea><button id="assistantSend" class="btn btn-primary" type="submit" disabled>إرسال</button></form><p class="muted">المساعد معلوماتي فقط، ولا ينفذ أوامر تداول أو يتجاوز مدير المخاطر. قد تكون الأخبار الخارجية غير دقيقة. لا تحفظ المحادثات على الخادم في هذا الإصدار.</p></article></section><section id="tradesSection" class="content-section hidden"><div class="page-heading"><div><span class="eyebrow">TRADE HISTORY</span><h2>سجل الصفقات</h2><p>بيانات الصفقات المغلقة التي أبلغ عنها جسر MT5.</p></div><button class="btn btn-outline" id="refreshTrades">تحديث</button></div><div class="table-wrap"><table><thead><tr><th>الرمز</th><th>الاتجاه</th><th>الحجم</th><th>صافي الربح</th><th>عمولة 30%</th><th>التاريخ</th></tr></thead><tbody id="tradesBody"><tr><td colspan="6" class="empty">لا توجد صفقات مسجلة بعد.</td></tr></tbody></table></div></section>
+        <section id="referralSection" class="content-section hidden"><div class="page-heading"><div><span class="eyebrow">REFERRAL PROGRAM</span><h2>رابط الإحالة الخاص بك</h2><p>شارك الرابط للدعوة فقط. لا توجد عمولة أو مكافأة إحالة.</p></div></div><div class="surface-card narrow"><label>رابط الإحالة<input id="referralUrl" readonly></label><button id="copyReferral" class="btn btn-primary full">نسخ الرابط</button><p class="muted">التسجيل مجاني بالكامل. رابط الإحالة للتعريف فقط ولا توجد مكافآت إحالة.</p></div></section>
+      </div>
+    </section>
+
+    
+    <footer class="footer"><span>SUPER TRADING BOT</span><span>نسخة تشغيل مؤمنة — دون ضمان أرباح</span><span>© 2026</span></footer>
+  </main>
+  <div id="toast" class="toast" role="status"></div>
+  <script src="/static/app.js" defer></script>
+</body></html>

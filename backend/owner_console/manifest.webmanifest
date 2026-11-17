@@ -1,0 +1,28 @@
+{
+  "id": "/owner-console/",
+  "name": "SUPER TRADING BOT — Admin",
+  "short_name": "STB Admin",
+  "description": "لوحة الإدارة الخاصة بمالك SUPER TRADING BOT",
+  "lang": "ar",
+  "dir": "rtl",
+  "start_url": "/owner-console/",
+  "scope": "/owner-console/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#060d18",
+  "theme_color": "#07111f",
+  "icons": [
+    {
+      "src": "/static/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/static/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
